@@ -49,6 +49,9 @@ class bridge:
         )
 
     def stop_opto_stim(self):
+        """
+        Stops the optostim
+        """
         self.eng.stopOptoStim(self.hZP, nargout=0)
 
     def num_stim_cond(self):
