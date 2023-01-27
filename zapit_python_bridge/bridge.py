@@ -55,7 +55,9 @@ class bridge:
         self.eng.stopOptoStim(self.hZP, nargout=0)
 
     def num_stim_cond(self):
-        # TODO
+        """
+        TODO
+        """
         return 0
 
     def set_experiment_dir(self):
