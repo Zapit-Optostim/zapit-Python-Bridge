@@ -17,22 +17,31 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Operating System :: OS Independent",
     "License :: OSI Approved :: BSD License",
+    "Natural Language :: English", 
+    "Topic :: Scientific/Engineering :: Image Processing",
+    "License :: Free for non-commercial use",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research"
 ]
 
+dependencies = [
+    "matlabengine",
+    "ipython"
+    ]
 
 
 [project.optional-dependencies]
 dev = [
-	"pytest",
-	"pytest-cov",
-	"coverage",
-	"tox",
-	"black",
-   	"isort",
-    	"mypy",
-	"pre-commit",
-	"flake8",
- 	"setuptools_scm",
+  "pytest",
+  "pytest-cov",
+  "coverage",
+  "tox",
+  "black",
+  "isort",
+  "mypy",
+  "pre-commit",
+  "flake8",
+  "setuptools_scm",
 ]
 
 

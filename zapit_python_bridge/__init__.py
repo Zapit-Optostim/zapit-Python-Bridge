@@ -5,3 +5,7 @@ try:
 except PackageNotFoundError:
     # package is not installed
     pass
+
+
+# TODO -- something like this so we can import more easily
+#from . import bridge
