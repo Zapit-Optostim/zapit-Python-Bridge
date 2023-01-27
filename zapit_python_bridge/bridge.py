@@ -67,5 +67,7 @@ class bridge:
         return 0
 
     def unset_experiment_dir(self):
-        # TODO (this also does not exist in MATLAB)
+        """
+        TODO (this also does not exist in MATLAB)
+        """
         return 0

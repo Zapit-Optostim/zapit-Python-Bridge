@@ -28,7 +28,7 @@ hZP.stop_opto_stim()
 ```
 
 If you need to reload the module for development purposes, you must first
-delete the running class instance or it will hang when it next tries to 
+delete the running class instance or it will hang when it next tries to
 connect:
 ```ipython
 In [1]: del hZP
@@ -74,5 +74,3 @@ eng.plotChanSamples(SC, 1, nargout=0)
 eng.sendSamples(hZP,  nargout=0)
 eng.stopOptoStim(hZP,  nargout=0)
 ```
-
-
