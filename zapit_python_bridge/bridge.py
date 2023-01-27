@@ -3,7 +3,7 @@ import matlab.engine
 
 class bridge:
 
-    ## Attributes (remove from here, perhaps, when it all works)
+    # Attributes (remove from here, perhaps, when it all works)
     def __init__(self):
         """
         Connect to the MATLAB engine
@@ -12,9 +12,6 @@ class bridge:
         names = matlab.engine.find_matlab()
         if "zapit" in names:
             print("CONNECTING TO MATLAB")
-            # TODO - What happens if there is more than one session called zapit?
-            # maybe can find if this is the case with matlab.engine.find_matlab()
-            # and then connect to the first one
             self.eng = matlab.engine.connect_matlab("zapit")
 
             print("CONNECTED")
