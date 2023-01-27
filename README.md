@@ -36,7 +36,7 @@ Disconnecting from MATLAB
 
 
 In [2]: reload(zpb)
-Out[2]: <module 'zapit_python_bridge.bridge' from 'D:\\DropBox\\Dropbox (UCL)\\work\\Matlab_Scripts\\ZapitOptostim\\zapit-python-bridge\\zapit_python_bridge\\bridge.py'>
+Out[2]: <module 'zapit_python_bridge.bridge' from 'D:zapit-python-bridge\\zapit_python_bridge\\bridge.py'>
 
 In [3]: hZP = bridge.bridge()
 CONNECTING TO MATLAB

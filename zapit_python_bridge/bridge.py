@@ -1,5 +1,6 @@
 import matlab.engine
 
+
 class bridge:
 
     ## Attributes (remove from here, perhaps, when it all works)
@@ -8,28 +9,59 @@ class bridge:
         Connect to the MATLAB engine
         """
 
-        print('CONNECTING TO MATLAB')
-        # TODO - What happens if there is more than one session called zapit?
-        # maybe can find if this is the case with matlab.engine.find_matlab()
-        self.eng = matlab.engine.connect_matlab('zapit')
+        names = matlab.engine.find_matlab()
+        if "zapit" in names:
+            print("CONNECTING TO MATLAB")
+            # TODO - What happens if there is more than one session called zapit?
+            # maybe can find if this is the case with matlab.engine.find_matlab()
+            # and then connect to the first one
+            self.eng = matlab.engine.connect_matlab("zapit")
 
-        print('CONNECTED')
-        # TODO -- check variables exist
-        self.hZP = self.eng.workspace['hZP']
-        self.hZPview = self.eng.workspace['hZPview']
-
+            print("CONNECTED")
+            # TODO -- check variables exist
+            self.hZP = self.eng.workspace["hZP"]
+            self.hZPview = self.eng.workspace["hZPview"]
+        else:
+            print('FAILED TO FIND MATLAB SESSION "zapit"')
 
     def __del__(self):
-        print('Disconnecting from MATLAB')
-        self.eng.quit() # Otherwise it locks up if we try to reconnect
+        print("Disconnecting from MATLAB")
+        self.eng.quit()  # Otherwise it locks up if we try to reconnect
 
-    def send_samples(self, conditionNum=-1, laserOn=True, hardwareTriggered=True, logging=True, verbose=False):
-        condition_num, laser_on  = self.eng.sendSamples(self.hZP, 'conditionNum', -1,
-                                            'laserOn', True,
-                                            'hardwareTriggered', True,
-                                            'logging', True,
-                                            'verbose', False,
-                                            nargout=2)
+    def send_samples(
+        self,
+        conditionNum=-1,
+        laserOn=True,
+        hardwareTriggered=True,
+        logging=True,
+        verbose=False,
+    ):
+        condition_num, laser_on = self.eng.sendSamples(
+            self.hZP,
+            "conditionNum",
+            -1,
+            "laserOn",
+            True,
+            "hardwareTriggered",
+            True,
+            "logging",
+            True,
+            "verbose",
+            False,
+            nargout=2,
+        )
 
     def stop_opto_stim(self):
-        self.eng.stopOptoStim(self.hZP,  nargout=0)
+        self.eng.stopOptoStim(self.hZP, nargout=0)
+
+    def num_stim_cond(self):
+        # TODO
+        return 0
+
+    def set_experiment_dir(self):
+        # TODO
+        return 0
+
+    def unset_experiment_dir(self):
+        # TODO (this also does not exist in MATLAB)
+        return 0
