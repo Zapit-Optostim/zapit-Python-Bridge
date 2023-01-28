@@ -3,13 +3,12 @@
 **This code is still under development. It is in no way ready for use.**
 This bridge uses `matlab.engine` to communicate with MATLAB.
 
+### Installing
+```
+pip install zapit-Python-Bridge
+```
 
 ### Example
-Until it's on PiPy you should first `cd` to code dir and
-```
-pip install -e .
-```
-
 Then in iPython:
 ```python
 import zapit_python_bridge.bridge as zpb
