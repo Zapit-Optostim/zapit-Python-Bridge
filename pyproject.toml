@@ -67,7 +67,7 @@ addopts = "--cov=zapit_python_bridge"
 [tool.black]
 target-version = ['py38', 'py39', 'py310']
 skip-string-normalization = false
-line-length = 79
+line-length = 91
 exclude = '''
 (
   /(
@@ -88,7 +88,9 @@ exclude = '''
 
 [tool.isort]
 profile = "black"
-line_length = 79
+line_length = 91
+
+# for flake8 see ./.flake8
 
 [tool.setuptools_scm]
 

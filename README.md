@@ -27,23 +27,26 @@ hZP.send_samples(conditionNum=2,laserOn=0)
 hZP.stop_opto_stim()
 ```
 
-If you need to reload the module for development purposes, you must first
-delete the running class instance or it will hang when it next tries to
-connect:
-```ipython
-In [1]: del hZP
-Disconnecting from MATLAB
+If you need to reload the module for development purposes, you **must** first delete the running class instance or it will hang when it next tries to connect:
 
+```ipython
+In [1]: hZP.release_matlab()
+Disconnecting from MATLAB
 
 In [2]: reload(zpb)
 Out[2]: <module 'zapit_python_bridge.bridge' from 'D:zapit-python-bridge\\zapit_python_bridge\\bridge.py'>
 
-In [3]: hZP = bridge.bridge()
-CONNECTING TO MATLAB
-CONNECTED
+In [3]: hZP = zpb.bridge()
+Attempting MATLAB connection...
+Connected!
 ```
 
+### Minimal example for running an exeperiment
+See `examples` directory
 
+```
+python minimal_experiment_example.py
+```
 
 ### Connecting to the zapit session: minimal example
 
