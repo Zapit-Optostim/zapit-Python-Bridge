@@ -1,8 +1,8 @@
 # zapit-Python-Bridge
 
 Interface for controlling a running Zapit MATLAB instance from Python.
-The scanner and sample calibration are performed in MATLAB. 
-The rest of the operations can be performed via Python. 
+The scanner and sample calibration are performed in MATLAB.
+The rest of the operations can be performed via Python.
 
 ### Installing
 ```
