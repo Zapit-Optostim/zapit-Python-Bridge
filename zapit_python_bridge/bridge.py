@@ -76,20 +76,29 @@ class bridge:
         """Send samples to the DAQ"""
         # fmt: off
         condition_num, laser_on = self.eng.sendSamples(self.hZP,
-                                                       "conditionNum", -1,
-                                                       "laserOn", True,
-                                                       "hardwareTriggered", True,
-                                                       "logging", True,
-                                                       "verbose", False,
+                                                       "conditionNum", conditionNum,
+                                                       "laserOn", laserOn,
+                                                       "hardwareTriggered", hardwareTriggered,
+                                                       "logging", logging,
+                                                       "verbose", verbose,
                                                        nargout=2)
         # fmt: on
 
     def stop_opto_stim(self):
-        """Stops the optostim"""
+        """Stops the optostim
+
+        Inputs:
+        none
+        """
         self.eng.stopOptoStim(self.hZP, nargout=0)
 
     def is_stimConfig_loaded(self):
-        """Return true if zapit has a loaded stim config"""
+        """Return true if zapit has a loaded stim config
+
+
+        Inputs:
+        none
+        """
         return self.eng.eval("~isempty(hZP.stimConfig)", nargout=1)
 
     def num_stim_cond(self):
@@ -102,14 +111,29 @@ class bridge:
         return n
 
     def get_experiment_path(self):
-        """Get the experiment directory"""
+        """Get the experiment directory
+
+
+        Inputs:
+        none
+        """
         exp_dir = self.eng.eval("hZP.experimentPath", nargout=1)
         return exp_dir
 
     def set_experiment_path(self, exp_dir):
-        """Set the experiment directory"""
+        """Set the experiment directory
+
+
+        Inputs:
+        none
+        """
         self.eng.eval("hZP.experimentPath='%s';" % exp_dir, nargout=0)
 
     def clear_experiment_path(self):
-        """Clear the experiment path"""
+        """Clear the experiment path
+
+
+        Inputs:
+        none
+        """
         self.eng.eval("hZP.clearExperimentPath", nargout=0)
