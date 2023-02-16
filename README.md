@@ -1,7 +1,8 @@
 # zapit-Python-Bridge
 
-**This code is still under development. It is in no way ready for use.**
-This bridge uses `matlab.engine` to communicate with MATLAB.
+Interface for controlling a running Zapit MATLAB instance from Python.
+The scanner and sample calibration are performed in MATLAB. 
+The rest of the operations can be performed via Python. 
 
 ### Installing
 ```
