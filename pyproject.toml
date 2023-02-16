@@ -67,30 +67,15 @@ addopts = "--cov=zapit_python_bridge"
 [tool.black]
 target-version = ['py38', 'py39', 'py310']
 skip-string-normalization = false
+line-length = 79
+
+
+[tool.ruff]
 line-length = 95
-exclude = '''
-(
-  /(
-      \.eggs
-    | \.git
-    | \.hg
-    | \.mypy_cache
-    | \.tox
-    | \.venv
-    | _build
-    | buck-out
-    | build
-    | dist
-    | examples
-  )/
-)
-'''
+exclude = ["__init__.py","build",".eggs"]
+select = ["I", "E", "F"]
+fix = true
 
-[tool.isort]
-profile = "black"
-line_length = 95
-
-# for flake8 see ./.flake8
 
 [tool.setuptools_scm]
 
@@ -104,8 +89,3 @@ ignore = [
   "tests/test_integration/*",
   ".flake8"
 ]
-
-
-[tool.poetry.extras]
-
-[tool.poetry.dependencies]
