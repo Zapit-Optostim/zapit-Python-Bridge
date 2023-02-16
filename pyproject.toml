@@ -104,8 +104,3 @@ ignore = [
   "tests/test_integration/*",
   ".flake8"
 ]
-
-
-[tool.poetry.extras]
-
-[tool.poetry.dependencies]
