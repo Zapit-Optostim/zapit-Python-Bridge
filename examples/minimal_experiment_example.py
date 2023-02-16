@@ -41,13 +41,17 @@ def run_experiment():
         # In a real experiment you likely want to enable both logging
         # and hardware triggering.
         print("Presenting stimulus %d/%d" % (currentTrial, numTrials))
-        hZP.send_samples(conditionNum=-1, hardwareTriggered=False, logging=False)
+        hZP.send_samples(
+            conditionNum=-1, hardwareTriggered=False, logging=False
+        )
 
         sleep(0.5)
 
         hZP.stop_opto_stim()
 
-        sleep(0.3)  # This delay is necessary because there is a non-blocking delay
+        sleep(
+            0.3
+        )  # This delay is necessary because there is a non-blocking delay
         # of 300 ms before the task is Stopped by zapit.pointer.stopOptoStim
         # It is possible in the future that we no longer stop the task at this
         # stage and so the need for the minimal delay will go away. In practice
