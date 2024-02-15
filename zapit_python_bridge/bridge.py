@@ -6,7 +6,7 @@ class bridge:
     """
     A Python to MATLAB bridge for zapit
 
-    Zapit runs in MATLAB, and this class is a bridge to bring key API commands into Python.
+    Zapit runs in MATLAB. This class is a bridge to bring key API commands into Python.
     The user sets up the sample in MATLAB, and then uses this class to run the experiment
     in python.
 
@@ -69,6 +69,9 @@ class bridge:
         self,
         conditionNum=-1,
         laserOn=True,
+        stimDurationSeconds=-1,
+        startDelaySeconds=0,
+        laserPower_mw=-1,
         hardwareTriggered=True,
         logging=True,
         verbose=False,
@@ -76,12 +79,15 @@ class bridge:
         """Send samples to the DAQ"""
         # fmt: off
         condition_num, laser_on = self.eng.sendSamples(self.hZP,
-                                                       "conditionNum", conditionNum,
-                                                       "laserOn", laserOn,
-                                                       "hardwareTriggered", hardwareTriggered,
-                                                       "logging", logging,
-                                                       "verbose", verbose,
-                                                       nargout=2)
+                                            "conditionNum", conditionNum,
+                                            "laserOn", laserOn,
+                                            "stimDurationSeconds", stimDurationSeconds,
+                                            "startDelaySeconds", startDelaySeconds,
+                                            "laserPower_mw", laserPower_mw,
+                                            "hardwareTriggered", hardwareTriggered,
+                                            "logging", logging,
+                                            "verbose", verbose,
+                                            nargout=2)
         # fmt: on
 
     def stop_opto_stim(self):

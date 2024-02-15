@@ -19,6 +19,9 @@ from importlib import reload
 hZP = zpb.bridge()
 
 # Interact
+hZP.is_stimConfig_loaded()
+hZP.num_stim_cond()
+
 hZP.send_samples()
 hZP.stop_opto_stim
 
@@ -41,7 +44,7 @@ Attempting MATLAB connection...
 Connected!
 ```
 
-### Minimal example for running an exeperiment
+### Minimal example for running an experiment
 See `examples` directory
 
 ```
