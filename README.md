@@ -57,6 +57,7 @@ In MATLAB:
 ```MATLAB
  >> matlab.engine.shareEngine('zapit')
 ```
+(Note, if this works you can set the openPythonBridgeOnStartup setting in your Zapit config file to true. This will open run the above line each time Zapit starts).
 
 In iPython:
 
