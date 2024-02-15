@@ -49,13 +49,14 @@ def run_experiment():
 
         hZP.stop_opto_stim()
 
-        sleep(
-            0.3
-        )  # This delay is necessary because there is a non-blocking delay
-        # of 300 ms before the task is Stopped by zapit.pointer.stopOptoStim
-        # It is possible in the future that we no longer stop the task at this
-        # stage and so the need for the minimal delay will go away. In practice
-        # this delay is likely a non-issue but see:
+        sleep(0.3)
+        # This delay is necessary because there is a non-blocking delay
+        # of 300 ms before the task is stopped by zapit.pointer.stopOptoStim
+        # Our loop in this example therefore needs a pause.
+        # It is quite likely that, in practice, the behavioral task has various
+        # events that go on for longer than 300 ms following stop_opto_stim.
+        # In this case no pause is needed in your live code. There is an
+        # Issue on this here:
         # https://github.com/Zapit-Optostim/zapit/issues/102
 
         currentTrial += 1
